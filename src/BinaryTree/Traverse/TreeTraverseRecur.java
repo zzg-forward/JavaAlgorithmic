@@ -68,11 +68,11 @@ public class TreeTraverseRecur {
         TreeTraverseRecur tree = new TreeTraverseRecur();
         TreeNode root = tree.initNode();
 
-        System.out.print("先序" + "\n");
+        System.out.println("先序");
         tree.preOrder(root);
-        System.out.print("\n" + "中序" + "\n");
+        System.out.println("中序");
         tree.inOrder(root);
-        System.out.print("\n" + "后序" + "\n");
+        System.out.println("后序");
         tree.posOrder(root);
 
     }
