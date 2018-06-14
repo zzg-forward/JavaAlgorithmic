@@ -5,7 +5,7 @@ import java.util.Queue;
 
 /**
  * p12
- * 猫狗队列
+ * 猫狗队列-自己创建数据结构
  */
 
 class Pet{
