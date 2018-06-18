@@ -1,4 +1,4 @@
-package 递归;
+package CodeJava.递归;
 
 /**
  * 小数问题:将数组左边比该数小的数加在一起
