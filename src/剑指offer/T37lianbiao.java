@@ -1,5 +1,10 @@
 package 剑指offer;
 
+/**
+ * 剑指 offer代码解析——面试题37两个链表的第一个公共结点
+ * (1)利用栈先进后出的特点
+ * (2)如下的方法，先走长的
+ */
 public class T37lianbiao {
 
     public static <T> Node<T> getFirstCommonNode(Node<T> first1, Node<T> first2){
