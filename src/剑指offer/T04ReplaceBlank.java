@@ -9,7 +9,7 @@ package 剑指offer;
  *
  */
 
-public class T02ReplaceBlank {
+public class T04ReplaceBlank {
     public static void main(String[] args) {
         System.out.println(replaceBlank("we are happy."));
         System.out.println(replaceBlank2(new StringBuilder("we are happy.")));

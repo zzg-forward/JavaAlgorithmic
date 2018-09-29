@@ -15,7 +15,7 @@ package 剑指offer;
  * 如果出了边界，则说明二维数组中不存在该整数。
  */
 
-public class T01FindNumInM {
+public class T03FindNumInM {
     public static void main(String[] args) {
 
     }
