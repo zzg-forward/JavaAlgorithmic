@@ -2,6 +2,7 @@ package 剑指offer;
 
 /**
  * 旋转数组的最小数字
+ * 就是二分查找的思想，mid和left与right比较，然后缩小范围继续查找，要灵活思考，要懂的思想
  *
  * 题目描述
  * 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
@@ -31,18 +32,20 @@ package 剑指offer;
 public class T08MinNumberInRotateArray {
 
     public static void main(String[] args) {
-
+        int[] test = new int[]{4,5,6,7,8,2};
+        System.out.println(getMinNumberInRotateArray(test));
+        System.out.println(getMinNumInRotateArray2(test));
     }
 
     private static int getMinNumberInRotateArray(int[] testArr) {
         if (testArr == null || testArr.length == 0) {
-            return 0;
+            return -1;
         }
         int len = testArr.length;
         int low = 0;
         int high = len - 1;
         while (low < high) {
-            int mid = low + (high - low) >> 1;
+            int mid = low + ((high - low) >> 1);    //优先级！！！！加括号
             if (testArr[mid] < testArr[high]) {
                 high = mid;   // high = mid;
             }else if (testArr[mid] == testArr[high]) {
@@ -52,6 +55,24 @@ public class T08MinNumberInRotateArray {
             }
         }
         return testArr[low];
+    }
+
+    private static int getMinNumInRotateArray2(int[] array) {
+        if (array == null || array.length == 0)
+            return  -1;
+        int left = 0;
+        int right = array.length - 1;
+        int mid;
+        while (left < right) {
+            mid = left + ((right - left) >> 1);
+            if (array[mid] > array[left])
+                left = mid + 1;
+            else if (array[mid] == array[left])
+                left =left + 1;
+            else
+                right = mid;     //right = mid;
+        }
+        return array[left];
     }
 
 }

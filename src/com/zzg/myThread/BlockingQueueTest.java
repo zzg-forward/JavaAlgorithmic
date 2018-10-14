@@ -4,6 +4,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 /**
  * BlockingQueue
@@ -14,6 +15,17 @@ import java.util.concurrent.LinkedBlockingDeque;
  * 阻塞队列还有更多实现类，用来满足各种复杂的需求：ArrayBlockingQueue, DelayQueue, LinkedBlockingQueue, PriorityBlockingQueue, SynchronousQueue
  */
 
+class Tst extends AbstractQueuedSynchronizer {
+    @Override
+    protected boolean tryAcquire(int arg) {
+        return super.tryAcquire(arg);
+    }
+
+    @Override
+    protected boolean tryRelease(int arg) {
+        return super.tryRelease(arg);
+    }
+}
 public class BlockingQueueTest {
     public static void main(String[] args) {
         BlockingQueue bqueue = new ArrayBlockingQueue(20);
