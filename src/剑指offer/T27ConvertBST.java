@@ -41,7 +41,7 @@ public class T27ConvertBST {
     private static void convertSub(TreeNode root) {
         if (root == null)
             return;
-        convert(root.left);
+        convertSub(root.left);
         if (end == null) {
             head = root;
             end = root;
@@ -50,7 +50,7 @@ public class T27ConvertBST {
             root.left = end;
             end = root;
         }
-        convert(root.right);
+        convertSub(root.right);
     }
 
     /**
