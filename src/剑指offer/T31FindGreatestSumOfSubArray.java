@@ -1,5 +1,7 @@
 package 剑指offer;
 
+import java.util.HashMap;
+
 /**
  * 连续子数组的最大和
  *
@@ -18,6 +20,11 @@ package 剑指offer;
 
 public class T31FindGreatestSumOfSubArray {
     public static void main(String[] args) {
+        HashMap<Integer, String> map = new HashMap<>();
+        map.put(1, "zzg");
+        map.put(1, "zzg come on!!!");
+        System.out.println(map.get(1));
+        System.out.println(new Integer(1).hashCode());
         System.out.println(findGreatestSumOfSubArray(new int[]{-2,-1,-66,-100}));
     }
 
