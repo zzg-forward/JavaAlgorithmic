@@ -1,5 +1,10 @@
 package 剑指offer;
 
+import java.text.DateFormat;
+import java.text.FieldPosition;
+import java.text.ParsePosition;
+import java.util.Date;
+
 /**
  * [剑指offer] 整数中1出现的次数（从1到n整数中1出现的次数）
  *
@@ -24,7 +29,23 @@ package 剑指offer;
  */
 
 public class T32NumberOf1Between1AndN {
+    private static ThreadLocal<DateFormat> threadLocalSession = new ThreadLocal<>();
     public static void main(String[] args) {
+        //threadLocal的使用
+//        threadLocalSession.set(new DateFormat() {
+//            @Override
+//            public StringBuffer format(Date date, StringBuffer toAppendTo, FieldPosition fieldPosition) {
+//                return null;
+//            }
+//
+//            @Override
+//            public Date parse(String source, ParsePosition pos) {
+//                return null;
+//            }
+//        });
+//        threadLocalSession.get();
+//        threadLocalSession.remove();
+
         System.out.println(getNumberOf1Between1AndN(13));
     }
 
