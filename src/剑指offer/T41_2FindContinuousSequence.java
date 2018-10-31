@@ -14,15 +14,27 @@ import java.util.ArrayList;
  * 终止条件为：一直增加begin到(1+sum)/2并且end小于sum为止
  *
  * 滑动窗口？
- * 
+ *
  */
 
 public class T41_2FindContinuousSequence {
     public static void main(String[] args) {
-
+        System.out.println(leftRotateString(" abcXYZdef", 3));
     }
 
-    public ArrayList<ArrayList<Integer>> findContinuousSequence (int sum) {
+    //T42 左旋转字符串
+    public static String leftRotateString (String str, int n) {
+        int len = str.length();
+        if (len == 0) {
+            return "";
+        }
+        n = n % len;
+        String s1 = str.substring(n, len);
+        String s2 = str.substring(0, n);
+        return s1 + s2;
+    }
+
+    public static ArrayList<ArrayList<Integer>> findContinuousSequence (int sum) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
         if (sum < 3) {
             return result;
